@@ -1,21 +1,23 @@
 export default function Sounds() {
   const bgBonfire = new Audio(
-    'https://github.com/henriquessf/pomodoreTimerNew/blob/main/public/audio/Lareira.wav?raw=true'
+    'https://github.com/henriquessf/pomodoreTimerNew/blob/main/public/audio/Lareira.mp3?raw=true'
   )
   const bgWood = new Audio(
-    'https://github.com/henriquessf/pomodoreTimerNew/blob/main/public/audio/Floresta.wav?raw=true'
+    'https://github.com/henriquessf/pomodoreTimerNew/blob/main/public/audio/Floresta.mp3?raw=true'
   )
   const bgRain = new Audio(
-    'https://github.com/henriquessf/pomodoreTimerNew/blob/main/public/audio/Chuva.wav?raw=true'
+    'https://github.com/henriquessf/pomodoreTimerNew/blob/main/public/audio/Chuva.mp3?raw=true'
   )
-  // const bgCoffee = new Audio('../../public/audio/Cafeteria.wav')
   const bgCoffee = new Audio(
-    'https://github.com/henriquessf/pomodoreTimerNew/blob/main/public/audio/Cafeteria.wav?raw=true'
+    'https://github.com/henriquessf/pomodoreTimerNew/blob/main/public/audio/Cafeteria.mp3?raw=true'
   )
 
   bgBonfire.loop
+
   bgWood.loop
+
   bgRain.loop
+
   bgCoffee.loop
 
   return {
