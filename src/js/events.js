@@ -1,5 +1,5 @@
 //arquivo contendo todos os eventos, neste caso, só há o de click dos botões
-import Sounds from './sounds.js'
+
 import {
   buttonPlay,
   buttonStop,
@@ -10,41 +10,29 @@ import {
   buttonRainOff,
   buttonCoffeeOff,
   minutesDisplay,
-  secondsDisplay,
   buttonWoodOn,
   buttonBonfireOn,
   buttonCoffeeOn,
   buttonRainOn,
   buttonPause,
   buttonDarkTheme,
-  buttonWhiteTheme,
-  theme,
-  rainWait,
-  coffeeWait,
-  bonfireWait,
-  woodWait
+  buttonWhiteTheme
 } from './elements.js' //importando as variáveis dos elementos css do arquivo element.js
 
-const sounds = Sounds()
-
-export default function Events({ timer }) {
+export default function Events({ timer, sounds, controls }) {
   let minutes = Number(minutesDisplay.textContent)
-  let seconds = Number(secondsDisplay.textContent)
 
   buttonPlay.addEventListener('click', () => {
-    buttonPlay.classList.add('hide')
-    buttonPause.classList.remove('hide')
+    controls.play()
     timer.countdown()
   })
 
   buttonPause.addEventListener('click', () => {
-    buttonPause.classList.add('hide')
-    buttonPlay.classList.remove('hide')
+    controls.pause()
     timer.pause()
   })
   buttonStop.addEventListener('click', () => {
-    buttonPause.classList.add('hide')
-    buttonPlay.classList.remove('hide')
+    controls.stop()
     timer.pause()
     timer.updateDisplay(minutes, 0)
   })
@@ -55,123 +43,41 @@ export default function Events({ timer }) {
     timer.lessTime()
   })
   buttonBonfireOff.addEventListener('click', () => {
-    buttonBonfireOff.classList.add('hide')
-    buttonWoodOff.classList.add('hide')
-    buttonRainOff.classList.add('hide')
-    buttonCoffeeOff.classList.add('hide')
-
-    woodWait.classList.remove('hide')
-    rainWait.classList.remove('hide')
-    coffeeWait.classList.remove('hide')
-
-    buttonBonfireOn.classList.remove('hide')
-
+    controls.bonfireSoundOn()
     sounds.bgBonfire.play()
   })
   buttonBonfireOn.addEventListener('click', () => {
-    buttonBonfireOff.classList.remove('hide')
-    buttonWoodOff.classList.remove('hide')
-    buttonRainOff.classList.remove('hide')
-    buttonCoffeeOff.classList.remove('hide')
-
-    woodWait.classList.add('hide')
-    rainWait.classList.add('hide')
-    coffeeWait.classList.add('hide')
-
-    buttonBonfireOn.classList.add('hide')
+    controls.bonfireSoundOff()
     sounds.bgBonfire.pause()
   })
   buttonWoodOff.addEventListener('click', () => {
-    buttonWoodOff.classList.add('hide')
-    buttonBonfireOff.classList.add('hide')
-    buttonRainOff.classList.add('hide')
-    buttonCoffeeOff.classList.add('hide')
-
-    bonfireWait.classList.remove('hide')
-    rainWait.classList.remove('hide')
-    coffeeWait.classList.remove('hide')
-
-    buttonWoodOn.classList.remove('hide')
-
+    controls.woodSoundOn()
     sounds.bgWood.play()
   })
   buttonWoodOn.addEventListener('click', () => {
-    buttonWoodOff.classList.remove('hide')
-    buttonBonfireOff.classList.remove('hide')
-    buttonRainOff.classList.remove('hide')
-    buttonCoffeeOff.classList.remove('hide')
-
-    bonfireWait.classList.add('hide')
-    rainWait.classList.add('hide')
-    coffeeWait.classList.add('hide')
-
-    buttonWoodOn.classList.add('hide')
-
+    controls.woodSoundOff()
     sounds.bgWood.pause()
   })
   buttonCoffeeOff.addEventListener('click', () => {
-    buttonWoodOff.classList.add('hide')
-    buttonBonfireOff.classList.add('hide')
-    buttonRainOff.classList.add('hide')
-    buttonCoffeeOff.classList.add('hide')
-
-    bonfireWait.classList.remove('hide')
-    rainWait.classList.remove('hide')
-    woodWait.classList.remove('hide')
-
-    buttonCoffeeOn.classList.remove('hide')
-
+    controls.coffeeSoundOn()
     sounds.bgCoffee.play()
   })
   buttonCoffeeOn.addEventListener('click', () => {
-    buttonWoodOff.classList.remove('hide')
-    buttonBonfireOff.classList.remove('hide')
-    buttonRainOff.classList.remove('hide')
-    buttonCoffeeOff.classList.remove('hide')
-
-    bonfireWait.classList.add('hide')
-    rainWait.classList.add('hide')
-    woodWait.classList.add('hide')
-
-    buttonCoffeeOn.classList.add('hide')
-
+    controls.coffeeSoundOff()
     sounds.bgCoffee.pause()
   })
   buttonRainOff.addEventListener('click', () => {
-    buttonRainOff.classList.add('hide')
-    buttonBonfireOff.classList.add('hide')
-    buttonWoodOff.classList.add('hide')
-    buttonCoffeeOff.classList.add('hide')
-
-    bonfireWait.classList.remove('hide')
-    coffeeWait.classList.remove('hide')
-    woodWait.classList.remove('hide')
-
-    buttonRainOn.classList.remove('hide')
+    controls.rainSoundOn()
     sounds.bgRain.play()
   })
   buttonRainOn.addEventListener('click', () => {
-    buttonRainOff.classList.remove('hide')
-    buttonBonfireOff.classList.remove('hide')
-    buttonWoodOff.classList.remove('hide')
-    buttonCoffeeOff.classList.remove('hide')
-
-    bonfireWait.classList.add('hide')
-    coffeeWait.classList.add('hide')
-    woodWait.classList.add('hide')
-    buttonRainOn.classList.add('hide')
+    controls.rainSoundOff()
     sounds.bgRain.pause()
   })
   buttonDarkTheme.addEventListener('click', () => {
-    theme.classList.remove('white-theme')
-    theme.classList.add('dark-theme')
-    buttonWhiteTheme.classList.remove('hide')
-    buttonDarkTheme.classList.add('hide')
+    controls.darkTheme()
   })
   buttonWhiteTheme.addEventListener('click', () => {
-    theme.classList.remove('dark-theme')
-    theme.classList.add('white-theme')
-    buttonDarkTheme.classList.remove('hide')
-    buttonWhiteTheme.classList.add('hide')
+    controls.whiteTheme()
   })
 }

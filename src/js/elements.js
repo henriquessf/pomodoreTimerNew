@@ -22,6 +22,7 @@ const buttonRainOn = document.querySelector('.rain-on')
 const buttonDarkTheme = document.querySelector('.dark-button')
 const buttonWhiteTheme = document.querySelector('.white-button')
 const theme = document.querySelector('.theme')
+
 export {
   buttonPlay,
   buttonStop,
