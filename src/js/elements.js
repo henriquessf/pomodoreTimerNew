@@ -11,6 +11,10 @@ const buttonWoodOff = document.querySelector('.wood-off')
 const buttonBonfireOff = document.querySelector('.bonfire-off')
 const buttonRainOff = document.querySelector('.rain-off')
 const buttonCoffeeOff = document.querySelector('.coffee-off')
+const woodWait = document.querySelector('.wood-wait')
+const bonfireWait = document.querySelector('.bonfire-wait')
+const rainWait = document.querySelector('.rain-wait')
+const coffeeWait = document.querySelector('.coffee-wait')
 const buttonWoodOn = document.querySelector('.wood-on')
 const buttonBonfireOn = document.querySelector('.bonfire-on')
 const buttonCoffeeOn = document.querySelector('.coffee-on')
@@ -36,5 +40,9 @@ export {
   buttonPause,
   buttonDarkTheme,
   buttonWhiteTheme,
-  theme
+  theme,
+  bonfireWait,
+  rainWait,
+  coffeeWait,
+  woodWait
 }
