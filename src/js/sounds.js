@@ -4,7 +4,7 @@ export default function Sounds() {
   const bgRain = new Audio('../../public/audio/Chuva.wav')
   // const bgCoffee = new Audio('../../public/audio/Cafeteria.wav')
   const bgCoffee = new Audio(
-    'https://github.com/henriquessf/pomodoreTimerNew/blob/main/public/audio/Cafeteria.wav'
+    'https://github.com/henriquessf/pomodoreTimerNew/blob/main/public/audio/Cafeteria.wav?raw=true'
   )
 
   bgBonfire.loop
