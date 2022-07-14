@@ -89,3 +89,19 @@ body.dark-theme,
   color: white;
   fill: white;
 }
+
+@media (max-width: 930px) {
+  .left-menu {
+    position: absolute;
+    top: 20%;
+    left: 43%;
+    margin: -8rem 0 0 -8rem;
+  }
+
+  .right-menu {
+    position: absolute;
+    top: 60%;
+    left: 40%;
+    margin: -8rem 0 0 -8rem;
+  }
+}
