@@ -15,7 +15,9 @@ const buttonWoodOn = document.querySelector('.wood-on')
 const buttonBonfireOn = document.querySelector('.bonfire-on')
 const buttonCoffeeOn = document.querySelector('.coffee-on')
 const buttonRainOn = document.querySelector('.rain-on')
-
+const buttonDarkTheme = document.querySelector('.dark-button')
+const buttonWhiteTheme = document.querySelector('.white-button')
+const theme = document.querySelector('.theme')
 export {
   buttonPlay,
   buttonStop,
@@ -31,5 +33,8 @@ export {
   buttonBonfireOn,
   buttonCoffeeOn,
   buttonRainOn,
-  buttonPause
+  buttonPause,
+  buttonDarkTheme,
+  buttonWhiteTheme,
+  theme
 }

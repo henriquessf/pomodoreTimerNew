@@ -60,6 +60,13 @@ button {
   border-radius: 1.5rem;
 }
 
+.white-button,
+.dark-button {
+  margin: 2rem;
+  position: absolute;
+  right: 0;
+}
+
 .rain-on,
 .rain-on svg path,
 .wood-on,
@@ -84,24 +91,49 @@ svg path {
 }
 
 body.dark-theme,
-.dark-theme svg path {
+.dark-theme svg path,
+button.white-button {
   background-color: black;
   color: white;
+  fill: #c4c4cc;
+}
+
+.dark-theme .card {
+  background-color: #29292e;
+}
+
+.dark-theme .rain-on,
+.dark-theme .rain-on svg path,
+.dark-theme .wood-on,
+.dark-theme .wood-on svg path,
+.dark-theme .bonfire-on,
+.dark-theme .bonfire-on svg path,
+.dark-theme .coffee-on,
+.dark-theme .coffee-on svg path {
+  background-color: #0a3442;
   fill: white;
 }
 
 @media (max-width: 930px) {
   .left-menu {
     position: absolute;
-    top: 20%;
+    top: 25%;
     left: 43%;
     margin: -8rem 0 0 -8rem;
   }
-
+  #timer-config {
+    margin-top: 2rem;
+  }
   .right-menu {
     position: absolute;
-    top: 60%;
+    top: 65%;
     left: 40%;
     margin: -8rem 0 0 -8rem;
+  }
+  .white-button,
+  .dark-button {
+    margin: 1rem;
+    position: absolute;
+    right: 0;
   }
 }

@@ -15,7 +15,10 @@ import {
   buttonBonfireOn,
   buttonCoffeeOn,
   buttonRainOn,
-  buttonPause
+  buttonPause,
+  buttonDarkTheme,
+  buttonWhiteTheme,
+  theme
 } from './elements.js' //importando as variáveis dos elementos css do arquivo element.js
 
 const sounds = Sounds()
@@ -86,5 +89,17 @@ export default function Events({ timer }) {
     buttonRainOff.classList.remove('hide')
     buttonRainOn.classList.add('hide')
     sounds.bgRain.pause()
+  })
+  buttonDarkTheme.addEventListener('click', () => {
+    theme.classList.remove('white-theme')
+    theme.classList.add('dark-theme')
+    buttonWhiteTheme.classList.remove('hide')
+    buttonDarkTheme.classList.add('hide')
+  })
+  buttonWhiteTheme.addEventListener('click', () => {
+    theme.classList.remove('dark-theme')
+    theme.classList.add('white-theme')
+    buttonDarkTheme.classList.remove('hide')
+    buttonWhiteTheme.classList.add('hide')
   })
 }
