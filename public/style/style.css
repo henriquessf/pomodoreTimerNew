@@ -1,0 +1,91 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
+}
+
+body span {
+  font-size: 7.875rem;
+}
+
+main {
+  position: relative;
+  min-height: 100vh;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.pause svg path {
+  font-size: 400px;
+}
+
+.left-menu {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  margin: -8rem 0 0 -8rem;
+}
+
+.right-menu {
+  position: absolute;
+  top: 45%;
+  left: 65%;
+  margin: -8rem 0 0 -8rem;
+}
+
+#timer-config {
+  display: flex;
+  margin-top: 1rem;
+  gap: 2.5rem;
+}
+
+#sound-selector {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.card {
+  background-color: #e1e1e6;
+  padding: 3rem;
+  border-radius: 1.5rem;
+}
+
+.rain-on,
+.rain-on svg path,
+.wood-on,
+.wood-on svg path,
+.bonfire-on,
+.bonfire-on svg path,
+.coffee-on,
+.coffee-on svg path {
+  background-color: #02799d;
+  fill: white;
+}
+
+.white-theme,
+svg path {
+  background-color: white;
+  color: #323238;
+  fill: #323238;
+}
+
+.hide {
+  display: none;
+}
+
+body.dark-theme,
+.dark-theme svg path {
+  background-color: black;
+  color: white;
+  fill: white;
+}
