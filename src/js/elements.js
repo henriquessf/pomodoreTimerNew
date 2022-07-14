@@ -22,6 +22,10 @@ const buttonRainOn = document.querySelector('.rain-on')
 const buttonDarkTheme = document.querySelector('.dark-button')
 const buttonWhiteTheme = document.querySelector('.white-button')
 const theme = document.querySelector('.theme')
+const bonfireSoundVolume = document.querySelector('.bonfire-volume')
+const woodSoundVolume = document.querySelector('.wood-volume')
+const rainSoundVolume = document.querySelector('.rain-volume')
+const coffeeSoundVolume = document.querySelector('.coffee-volume')
 
 export {
   buttonPlay,
@@ -45,5 +49,9 @@ export {
   bonfireWait,
   rainWait,
   coffeeWait,
-  woodWait
+  woodWait,
+  bonfireSoundVolume,
+  coffeeSoundVolume,
+  woodSoundVolume,
+  rainSoundVolume
 }

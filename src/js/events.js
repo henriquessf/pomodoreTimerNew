@@ -16,7 +16,11 @@ import {
   buttonRainOn,
   buttonPause,
   buttonDarkTheme,
-  buttonWhiteTheme
+  buttonWhiteTheme,
+  bonfireSoundVolume,
+  coffeeSoundVolume,
+  rainSoundVolume,
+  woodSoundVolume
 } from './elements.js' //importando as variáveis dos elementos css do arquivo element.js
 
 export default function Events({ timer, sounds, controls }) {
@@ -79,5 +83,17 @@ export default function Events({ timer, sounds, controls }) {
   })
   buttonWhiteTheme.addEventListener('click', () => {
     controls.whiteTheme()
+  })
+  bonfireSoundVolume.addEventListener('change', () => {
+    sounds.bgBonfire.volume = bonfireSoundVolume.value
+  })
+  coffeeSoundVolume.addEventListener('change', () => {
+    sounds.bgCoffee.volume = coffeeSoundVolume.value
+  })
+  rainSoundVolume.addEventListener('change', () => {
+    sounds.bgRain.volume = rainSoundVolume.value
+  })
+  woodSoundVolume.addEventListener('change', () => {
+    sounds.bgWood.volume = woodSoundVolume.value
   })
 }
