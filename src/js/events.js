@@ -42,13 +42,19 @@ export default function Events({ timer, controls }) {
   buttonStop.addEventListener('click', () => {
     controls.stop()
     timer.pause()
-    timer.updateDisplay(minutes, 0)
+    timer.reset()
   })
   buttonMoreTime.addEventListener('click', () => {
-    timer.moreTime()
+    // timer.moreTime()
+    let newMinutes = timer.moreTime()
+    timer.updateDisplay(newMinutes, 0)
+    timer.updateMinutes(newMinutes)
   })
   buttonLessTime.addEventListener('click', () => {
-    timer.lessTime()
+    // timer.lessTime()
+    let newMinutes = timer.lessTime()
+    timer.updateDisplay(newMinutes, 0)
+    timer.updateMinutes(newMinutes)
   })
   buttonWoodOff.addEventListener('click', () => {
     controls.woodSoundOn()

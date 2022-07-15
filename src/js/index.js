@@ -5,8 +5,6 @@ import {
   secondsDisplay,
   buttonPlay,
   buttonStop,
-  buttonMoreTime,
-  buttonLessTime,
   buttonWoodOff,
   buttonBonfireOff,
   buttonRainOff,
