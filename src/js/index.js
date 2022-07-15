@@ -24,7 +24,6 @@ const timer = Timer({
   secondsDisplay,
   minutesDisplay
 })
-import Sounds from './sounds.js'
 import Controls from './controls.js'
 
 const controls = Controls({
@@ -43,6 +42,4 @@ const controls = Controls({
   buttonWhiteTheme
 })
 
-const sounds = Sounds()
-
-Events({ timer, sounds, controls })
+Events({ timer, controls })

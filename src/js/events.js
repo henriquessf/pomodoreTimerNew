@@ -20,10 +20,14 @@ import {
   bonfireSoundVolume,
   coffeeSoundVolume,
   rainSoundVolume,
-  woodSoundVolume
+  woodSoundVolume,
+  woodAudio,
+  rainAudio,
+  coffeeAudio,
+  bonfireAudio
 } from './elements.js' //importando as variáveis dos elementos css do arquivo element.js
 
-export default function Events({ timer, sounds, controls }) {
+export default function Events({ timer, controls }) {
   let minutes = Number(minutesDisplay.textContent)
 
   buttonPlay.addEventListener('click', () => {
@@ -46,37 +50,78 @@ export default function Events({ timer, sounds, controls }) {
   buttonLessTime.addEventListener('click', () => {
     timer.lessTime()
   })
-  buttonBonfireOff.addEventListener('click', () => {
-    controls.bonfireSoundOn()
-    sounds.bgBonfire.play()
-  })
-  buttonBonfireOn.addEventListener('click', () => {
-    controls.bonfireSoundOff()
-    sounds.bgBonfire.pause()
-  })
   buttonWoodOff.addEventListener('click', () => {
     controls.woodSoundOn()
-    sounds.bgWood.play()
+    // sounds.bgWood.play()
+    woodAudio.play()
   })
+  woodAudio.addEventListener(
+    'ended',
+    () => {
+      woodAudio.currentTime = 0
+      woodAudio.play()
+    },
+    false
+  )
   buttonWoodOn.addEventListener('click', () => {
     controls.woodSoundOff()
-    sounds.bgWood.pause()
+    // sounds.bgWood.pause()
+    woodAudio.pause()
   })
+  buttonBonfireOff.addEventListener('click', () => {
+    controls.bonfireSoundOn()
+    // sounds.bgBonfire.play()
+    bonfireAudio.play()
+  })
+  bonfireAudio.addEventListener(
+    'ended',
+    () => {
+      bonfireAudio.currentTime = 0
+      bonfireAudio.play()
+    },
+    false
+  )
+  buttonBonfireOn.addEventListener('click', () => {
+    controls.bonfireSoundOff()
+    // sounds.bgBonfire.pause()
+    bonfireAudio.pause()
+  })
+
   buttonCoffeeOff.addEventListener('click', () => {
     controls.coffeeSoundOn()
-    sounds.bgCoffee.play()
+    // sounds.bgCoffee.play()
+    coffeeAudio.play()
   })
+  coffeeAudio.addEventListener(
+    'ended',
+    () => {
+      coffeeAudio.currentTime = 0
+      coffeeAudio.play()
+    },
+    false
+  )
   buttonCoffeeOn.addEventListener('click', () => {
     controls.coffeeSoundOff()
-    sounds.bgCoffee.pause()
+    // sounds.bgCoffee.pause()
+    coffeeAudio.pause()
   })
   buttonRainOff.addEventListener('click', () => {
     controls.rainSoundOn()
-    sounds.bgRain.play()
+    // sounds.bgRain.play()
+    rainAudio.play()
   })
+  rainAudio.addEventListener(
+    'ended',
+    () => {
+      rainAudio.currentTime = 0
+      rainAudio.play()
+    },
+    false
+  )
   buttonRainOn.addEventListener('click', () => {
     controls.rainSoundOff()
-    sounds.bgRain.pause()
+    // sounds.bgRain.pause()
+    rainAudio.pause()
   })
   buttonDarkTheme.addEventListener('click', () => {
     controls.darkTheme()
@@ -85,15 +130,15 @@ export default function Events({ timer, sounds, controls }) {
     controls.whiteTheme()
   })
   bonfireSoundVolume.addEventListener('change', () => {
-    sounds.bgBonfire.volume = bonfireSoundVolume.value
+    bonfireAudio.bgBonfire.volume = bonfireSoundVolume.value
   })
   coffeeSoundVolume.addEventListener('change', () => {
-    sounds.bgCoffee.volume = coffeeSoundVolume.value
+    coffeeAudio.bgCoffee.volume = coffeeSoundVolume.value
   })
   rainSoundVolume.addEventListener('change', () => {
-    sounds.bgRain.volume = rainSoundVolume.value
+    rainAudio.volume = rainSoundVolume.value
   })
   woodSoundVolume.addEventListener('change', () => {
-    sounds.bgWood.volume = woodSoundVolume.value
+    woodAudio.volume = woodSoundVolume.value
   })
 }

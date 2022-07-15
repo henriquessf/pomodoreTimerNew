@@ -26,7 +26,10 @@ const bonfireSoundVolume = document.querySelector('.bonfire-volume')
 const woodSoundVolume = document.querySelector('.wood-volume')
 const rainSoundVolume = document.querySelector('.rain-volume')
 const coffeeSoundVolume = document.querySelector('.coffee-volume')
-
+const woodAudio = document.querySelector('.wood-audio')
+const rainAudio = document.querySelector('.rain-audio')
+const coffeeAudio = document.querySelector('.coffee-audio')
+const bonfireAudio = document.querySelector('.bonfire-audio')
 export {
   buttonPlay,
   buttonStop,
@@ -53,5 +56,9 @@ export {
   bonfireSoundVolume,
   coffeeSoundVolume,
   woodSoundVolume,
-  rainSoundVolume
+  rainSoundVolume,
+  woodAudio,
+  rainAudio,
+  coffeeAudio,
+  bonfireAudio
 }
